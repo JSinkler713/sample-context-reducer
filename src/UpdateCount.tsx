@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { StateContext } from './context';
-import {BasicAction} from "./reducer";
+import { BasicAction } from "./types";
 
 interface InputProps {
   sign: BasicAction["type"];
