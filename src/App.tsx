@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useContext } from "react";
+import { StateContext } from "./context";
+import UpdateCount from "./UpdateCount";
+import ChangeName from "./ChangeName";
 
 function App() {
+  const { name, count } = useContext(StateContext);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello</h1>
+      <p>{name}</p>
+      <h2>Our current Count is </h2>
+      <p>{count}</p>
+      <UpdateCount sign="ADD" symbol="+" />
+      <UpdateCount sign="SUBTRACT" symbol="-" />
+      <ChangeName />
     </div>
   );
 }
